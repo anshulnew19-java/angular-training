@@ -1,6 +1,11 @@
 <span 
 class="glyphicon" 
-[class.glyphicon-star]="isFavoirte"
-[class.glyphicon-star-empty]="!isFavoirte"
+[ngClass] = "{
+    'glyphicon-star' : isFavoirte,
+    'glyphicon-star-empty' : !isFavoirte
+}"
 (click)="onClick()"
 ></span>
+
+//[class.glyphicon-star]="isFavoirte"
+//[class.glyphicon-star-empty]="!isFavoirte"

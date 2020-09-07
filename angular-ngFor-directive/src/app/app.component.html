@@ -1,0 +1,30 @@
+<button (click)="onAdd()">ADD</button>
+Note: We are simply iterating the data.
+
+<ul>
+  <li *ngFor="let course of courses">
+      {{ course.name }}
+      <button (click)="onDelete(course)">REMOVE</button>
+  </li>
+</ul>
+
+<hr>
+
+Note: This is to display index & change detection.
+
+<ul>
+  <li *ngFor="let course of courses; index as i">
+      {{ i }} - {{ course.name }}
+      <button (click)="onUpdate(course)">UPDATE</button>
+  </li>
+</ul>
+
+<hr>
+
+Note: This is used to display odd/even row as per choices.
+
+<ul>
+  <li *ngFor="let course of courses; even as isEven; index as i; odd as isOdd">
+      {{ i }} - {{ course.name }} - <span *ngIf="isEven">(EVEN)</span> <span *ngIf="isOdd">(ODD)</span>
+  </li>
+</ul>
